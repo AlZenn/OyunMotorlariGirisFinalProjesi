@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class NPCController : MonoBehaviour
 {
-    public GameObject playerObject;
+    public GameObject playerObject, talkSound;
     public Animator npcAnimator;
     public float talkDistance = 3f;
-    public AudioSource talkSound;
 
     private void Update()
     {
@@ -15,14 +14,12 @@ public class NPCController : MonoBehaviour
 
         if (distance <= talkDistance)
         {
-            
+            talkSound.SetActive(true);
             npcAnimator.SetBool("Talking", true);
-            
         }
         else
         {
-            talkSound.Play();
-            
+            talkSound.SetActive(false);
             npcAnimator.SetBool("Talking", false);
             
         }

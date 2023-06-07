@@ -10,14 +10,14 @@ public class EvScript : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            lightObject.SetActive(false);
+            lightObject.SetActive(true);
         }
     }
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            lightObject.SetActive(true);
+            lightObject.SetActive(false);
         }
     }
 }
